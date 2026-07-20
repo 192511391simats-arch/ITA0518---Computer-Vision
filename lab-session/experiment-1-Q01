@@ -1,0 +1,20 @@
+import cv2
+from google.colab.patches import cv2_imshow
+
+# Read uploaded image
+img = cv2.imread('cv2.png')
+
+# Check whether image loaded
+if img is None:
+    print("Image not found")
+else:
+    # Convert to grayscale
+    gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+    # Display image
+    cv2_imshow(gray_img)
+
+    # Save image
+    cv2.imwrite('gray_image.jpg', gray_img)
+
+    print("Grayscale image saved successfully")
